@@ -9,12 +9,6 @@ body {
 	background-color: #eee;
 }
 
-.border {
-	border: rgb(10, 166, 161) 3px solid;
-	border-radius: 0.5rem;
-	padding: 0.6rem;
-}
-
 .navBar {
   display: flex;
   justify-content: space-between;
@@ -31,15 +25,12 @@ body {
 
 .navBar ul {
   display: flex;
-  flex-direction: column;
   list-style-type: none;
 }
 
 .active-link {
   display: flex;
-  margin-bottom: 0.3rem;
-  background-color: #2b2d41;
-  color: #eee;
+  color: #2b2d41;
 }
 
 .headerText {
