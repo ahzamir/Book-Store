@@ -1,7 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Book = (book) => {
-  const { title, author } = book.book;
+const Book = ({ title, author }) => {
+  Book.propTypes = {
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+  };
   return (
     <li>
       <div>
@@ -15,7 +19,7 @@ const Book = (book) => {
         </p>
       </div>
     </li>
-  )
+  );
 };
 
 export default Book;

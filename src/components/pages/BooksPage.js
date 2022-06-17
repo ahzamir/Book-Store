@@ -21,13 +21,13 @@ const BooksPage = () => {
   return (
     <div className="container">
       <div className="inner">
-        <Books books={books}/>
+        <Books books={books} />
       </div>
       <div>
         <BooksForm />
       </div>
     </div>
-  )
+  );
 };
 
 export default BooksPage;
