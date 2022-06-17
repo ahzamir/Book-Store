@@ -1,24 +1,10 @@
 import React from 'react';
 import Book from './Book';
 
-const Books = () => {
-  const books = [{
-    title: 'ahmad',
-    author: 'zaki',
-    id: 1,
-  },
-  {
-    title: 'zia',
-    author: 'zaki',
-    id: 2,
-  },
-  {
-    title: 'sharif',
-    author: 'zia',
-    id: 3,
-  }]; (
+const Books = (books) => {
+  return (
     <ul>
-      {books.forEach((book) => (
+      {books.books.map((book) => (
         <Book
           key={book.id}
           book={book}

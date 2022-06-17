@@ -1,21 +1,21 @@
 import React from 'react';
 
 const Book = (book) => {
-  const { author, title } = book;
+  const { title, author } = book.book;
   return (
     <li>
       <div>
-        <span>
+        <h2>
           Book title:
           {title}
-        </span>
-        <span>
+        </h2>
+        <p>
           Book author:
           {author}
-        </span>
+        </p>
       </div>
     </li>
-  );
+  )
 };
 
 export default Book;

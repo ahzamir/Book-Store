@@ -1,12 +1,12 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	padding: 7%;
-	background-color: #eee;
+  padding: 7%;
+  background-color: #eee;
 }
 
 .navBar {
