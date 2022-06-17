@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 7%;
+  background-color: #eee;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.navBar h1 {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2b2d41;
+}
+
+.navBar ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.active-link {
+  display: flex;
+  color: #2b2d41;
+}
+
+.headerText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2b2d41;
+  margin-bottom: 1rem;
+}
