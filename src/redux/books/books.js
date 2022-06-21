@@ -20,3 +20,24 @@ const books = (state = [], action) => {
     default: return state;
   }
 };
+
+// Action Creators
+let nextBookId = 0;
+const addBook = (title, author) => {
+  return {
+    type: ADD_BOOK,
+    id: nextBookId++,
+    title,
+    author
+  };
+}
+
+const removeBook = (id) => {
+  return {
+    type: REMOVE_BOOK,
+    id
+  };
+}
+
+export default books;
+export { addBook, removeBook };
