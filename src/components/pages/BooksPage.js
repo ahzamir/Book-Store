@@ -1,23 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import BooksForm from '../BooksForm';
 import Books from '../Books';
 
 const BooksPage = () => {
-  const books = [{
-    title: 'ahmad',
-    author: 'zaki',
-    id: 1,
-  },
-  {
-    title: 'zia',
-    author: 'zaki',
-    id: 2,
-  },
-  {
-    title: 'sharif',
-    author: 'zia',
-    id: 3,
-  }];
+  const books = useSelector((state) => state.books);
   return (
     <div className="container">
       <div className="inner">

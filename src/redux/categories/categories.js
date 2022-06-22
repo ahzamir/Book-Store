@@ -1,9 +1,11 @@
 const CHECK_STATUS = 'my-app/categories/CHECK';
 
-const categories = (state = [], action) => {
+const categoriesReducer = (state = [], action) => {
   switch (action.type) {
     case CHECK_STATUS:
-      return 'Under Constructuion';
+      return [
+        ...state,
+        'Under Constructuion'];
     default: return state;
   }
 };
@@ -13,4 +15,4 @@ const checkStatus = () => ({
 });
 
 export { checkStatus };
-export default categories;
+export default categoriesReducer;

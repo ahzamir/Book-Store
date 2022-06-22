@@ -1,26 +1,24 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Book Store
 
-> Description the project.
+> This is a website with two subpages: "Books" and "Categories. In this project I display a list of books and you can add and remove books on the list I have used React, Redux, HTML, CSS and javaScript for this project.
 
 
 ## Built With 
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- JavaScript (ES6)
+- React-Redux
+- Webpack
 
 ## Live Demo (if available) 💻
 
-[Live Demo Link](https://livedemo.com)
+[Book_Store](https://livedemo.com)
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
@@ -39,13 +37,6 @@ inside the project direcory open the commanline or Terminal, run npm install to 
 ### Usage
 
 To use this project or app run npm start in the project directory and you will see the live serever open on youe browser.
-
-### Run tests
-
-For running tests inside the project directory run npm test in command line or Terminal.
-
-### Deployment
-
 
 ## Authors
 
