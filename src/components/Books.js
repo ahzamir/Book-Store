@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { shape } from 'prop-types';
 import Book from './Book';
 
 const Books = ({ books }) => {
   Books.propTypes = {
-    books: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+    books: PropTypes.arrayOf(shape({})).isRequired,
   };
   return (
     <ul>
