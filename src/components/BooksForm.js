@@ -32,7 +32,7 @@ const BooksForm = () => {
       />
       <button
         type="button"
-        onClick={() => { dispatch(addBook(title, author)) }}
+        onClick={() => { dispatch(addBook(title, author)); }}
       >
         Add Book
       </button>
