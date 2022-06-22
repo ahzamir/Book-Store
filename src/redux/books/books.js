@@ -8,7 +8,7 @@ const initialState = [
   { title: 'janat book', author: 'janat', id: 3 },
 ];
 
-let nextBookId = (books) => {
+const nextBookId = (books) => {
   const maxId = books.reduce((maxId, book) => Math.max(book.id, maxId), -1);
   return maxId + 1;
 };
@@ -30,16 +30,11 @@ const booksReducer = (state = initialState, action) => {
   }
 };
 
-const addBook = (title, author) => {
-  nextBookId += 1;
-  return {
-    type: ADD_BOOK,
-    payload: {
-      title,
-      author,
-    },
-  };
-};
+const addBook = (title, author) => (
+  {
+    type: ADD_BOOK, payload: { title, author },
+  }
+);
 
 const removeBook = (id) => ({
   type: REMOVE_BOOK,
