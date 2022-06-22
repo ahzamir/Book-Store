@@ -4,6 +4,7 @@ import Books from '../Books';
 import { useSelector } from 'react-redux';
 
 const BooksPage = () => {
+  const books = useSelector(state => state)
   return (
     <div className="container">
       <div className="inner">
