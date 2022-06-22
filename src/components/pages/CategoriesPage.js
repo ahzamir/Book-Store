@@ -7,8 +7,11 @@ const Categories = () => {
   return (
     <button
       type="button"
-      onClick={() => dispatch(checkStatus())}>Check status</button>
-  )
+      onClick={() => dispatch(checkStatus())}
+    >
+      Check status
+    </button>
+  );
 };
 
 export default Categories;
