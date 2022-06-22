@@ -10,13 +10,13 @@ const books = (state = [{ title: 'ahmad book', author: 'ahmad', id: 0 },
       return [
         ...state,
         {
-          id: action.id,
-          title: action.title,
-          author: action.author,
+          title: action.payload.title,
+          author: action.payload.author,
+          id: action.payload.id,
         },
       ];
     case REMOVE_BOOK:
-      return state.filter((book) => (book.id !== action.id));
+      return state.filter((book) => (book.id !== action.payload.id));
     default: return state;
   }
 };
@@ -26,9 +26,11 @@ const addBook = (title, author) => {
   nextBookId += 1;
   return {
     type: ADD_BOOK,
-    id: nextBookId,
-    title,
-    author,
+    payload: {
+      id: nextBookId,
+      title,
+      author,
+    }
   };
 };
 
