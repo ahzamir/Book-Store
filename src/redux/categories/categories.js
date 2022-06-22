@@ -3,7 +3,9 @@ const CHECK_STATUS = 'my-app/categories/CHECK';
 const categoriesReducer = (state = [], action) => {
   switch (action.type) {
     case CHECK_STATUS:
-      return 'Under Constructuion';
+      return [
+        ...state,
+        'Under Constructuion'];
     default: return state;
   }
 };
