@@ -1,18 +1,18 @@
-import { apiAddBooks, apiRemoveBook } from '../dataAPI';
+import { apiAddBooks, apiRemoveBook, apiGetBooks } from '../dataAPI';
 
-// const GET_BOOKS = 'my-app/books/GET_BOOKS';
+const GET_BOOKS = 'my-app/books/GET_BOOKS';
 const ADD_BOOK = 'my-app/books/ADD_BOOK';
 const REMOVE_BOOK = 'my-app/books/REMOVE_BOOK';
 
 const initialState = [];
 
-// const getBooks = () => async (dispatch) => {
-//   const response = await apiGetBooks();
-//   dispatch({
-//     type: GET_BOOKS,
-//     payload: response,
-//   });
-// };
+const getBooks = () => async (dispatch) => {
+  const response = await apiGetBooks();
+  dispatch({
+    type: GET_BOOKS,
+    payload: response,
+  });
+};
 
 const addBook = (title, author) => async (dispatch) => {
   const response = await apiAddBooks(title, author);
@@ -39,8 +39,8 @@ const removeBook = (id) => async (dispatch) => {
 
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
-    // case GET_BOOKS:
-    //   return action.payload;
+    case GET_BOOKS:
+      return [action.payload];
     case ADD_BOOK:
       return [
         ...state,
@@ -57,4 +57,4 @@ const booksReducer = (state = initialState, action) => {
 };
 
 export default booksReducer;
-export { addBook, removeBook };
+export { addBook, removeBook, getBooks };
