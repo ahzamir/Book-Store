@@ -1,3 +1,14 @@
+const apiGetBooks = async () => {
+  const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/F6xaVFIjunp7AOsoP9NW/books/', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const data = await response.json();
+  return data;
+};
+
 const apiAddBooks = async (title, author) => {
   const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/F6xaVFIjunp7AOsoP9NW/books/', {
     method: 'POST',
@@ -14,15 +25,6 @@ const apiAddBooks = async (title, author) => {
   return response;
 };
 
-// const apiGetBooks = async () => {
-//   const response = await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${API_ID}/books`, {
-//     method: 'GET',
-//     headers: { contenttype: 'application/json' },
-//   });
-//   const data = await response.json();
-//   return data;
-// };
-
 const apiRemoveBook = async (id) => {
   const response = await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/F6xaVFIjunp7AOsoP9NW/books/${id}`, {
     method: 'DELETE',
@@ -34,4 +36,4 @@ const apiRemoveBook = async (id) => {
   return response;
 };
 
-export { apiAddBooks, apiRemoveBook };
+export { apiAddBooks, apiRemoveBook, apiGetBooks };
