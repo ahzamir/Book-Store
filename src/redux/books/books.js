@@ -1,46 +1,63 @@
-const API_ID = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/F6xaVFIjunp7AOsoP9NW';
-const ADD_BOOK = 'my-app/books/ADD';
-const REMOVE_BOOK = 'my-app/books/REMOVE';
+import { apiAddBooks } from '../dataAPI';
 
-const initialState = [
-  { title: 'ahmad book', author: 'ahmad', id: 0 },
-  { title: 'mahmood book', author: 'mahmood', id: 1 },
-  { title: 'karim book', author: 'karim', id: 2 },
-  { title: 'janat book', author: 'janat', id: 3 },
-];
+// const GET_BOOKS = 'my-app/books/GET_BOOKS';
+const ADD_BOOK = 'my-app/books/ADD_BOOK';
+// const REMOVE_BOOK = 'my-app/books/REMOVE_BOOK';
 
-const nextBookId = (books) => {
-  const maxId = books.reduce((maxId, book) => Math.max(book.id, maxId), -1);
-  return maxId + 1;
+const initialState = [];
+
+// const getBooks = () => async (dispatch) => {
+//   const response = await apiGetBooks();
+//   dispatch({
+//     type: GET_BOOKS,
+//     payload: response,
+//   });
+// };
+
+const addBook = (title, author) => async (dispatch) => {
+  const response = await apiAddBooks(title, author);
+  if (response.status === 201) {
+    dispatch({
+      type: ADD_BOOK,
+      payload: {
+        title,
+        author,
+      },
+    });
+  }
 };
+
+// const removeBook = (id) => async (dispatch) => {
+//   const response = await apiRemoveBooks(id);
+//   dispatch({
+//     type: REMOVE_BOOK,
+//     payload: response,
+//   });
+// };
+
+// const nextBookId = (books) => {
+//   const maxId = books.reduce((maxId, book) => Math.max(book.id, maxId), -1);
+//   return maxId + 1;
+// };
 
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
+    // case GET_BOOKS:
+    //   return action.payload;
     case ADD_BOOK:
       return [
         ...state,
         {
-          id: nextBookId(state),
+          id: action.payload.title.replace(''),
           title: action.payload.title,
           author: action.payload.author,
         },
       ];
-    case REMOVE_BOOK:
-      return state.filter((book) => (book.id !== action.payload.id));
+    // case REMOVE_BOOK:
+    //   return state.filter((book) => (book.id !== action.payload.id));
     default: return state;
   }
 };
 
-const addBook = (title, author) => (
-  {
-    type: ADD_BOOK, payload: { title, author },
-  }
-);
-
-const removeBook = (id) => ({
-  type: REMOVE_BOOK,
-  payload: { id },
-});
-
 export default booksReducer;
-export { addBook, removeBook };
+export { addBook };
