@@ -1,18 +1,17 @@
 const apiAddBooks = async (title, author) => {
-  const response = await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/F6xaVFIjunp7AOsoP9NW/books/`, {
+  const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/F6xaVFIjunp7AOsoP9NW/books/', {
     method: 'POST',
     body: JSON.stringify({
-      item_id: title.replace(''),
+      item_id: title.replace(/\s+/g, ''),
       title,
       author,
-      category: 'Non'
+      category: 'Non',
     }),
     headers: {
       'Content-Type': 'application/json',
     },
   });
-  const result = await response.json();
-  return result;
+  return response;
 };
 
 // const apiGetBooks = async () => {
@@ -24,16 +23,15 @@ const apiAddBooks = async (title, author) => {
 //   return data;
 // };
 
-// const apiRemoveBook = async (id) => {
-//   const response = await fetch(`${API_ID + id}`, {
-//     method: 'DELETE',
-//     body: {
-//       item_id: id,
-//     },
-//     headers: { contenttype: 'application/json' },
-//   });
-//   const data = await response.json();
-//   return data;
-// };
+const apiRemoveBook = async (id) => {
+  const response = await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/F6xaVFIjunp7AOsoP9NW/books/${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({
+      item_id: id,
+    }),
+    headers: { contenttype: 'application/json' },
+  });
+  return response;
+};
 
-export { apiAddBooks };
+export { apiAddBooks, apiRemoveBook };

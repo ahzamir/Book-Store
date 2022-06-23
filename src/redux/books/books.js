@@ -1,8 +1,8 @@
-import { apiAddBooks } from '../dataAPI';
+import { apiAddBooks, apiRemoveBook } from '../dataAPI';
 
 // const GET_BOOKS = 'my-app/books/GET_BOOKS';
 const ADD_BOOK = 'my-app/books/ADD_BOOK';
-// const REMOVE_BOOK = 'my-app/books/REMOVE_BOOK';
+const REMOVE_BOOK = 'my-app/books/REMOVE_BOOK';
 
 const initialState = [];
 
@@ -27,13 +27,15 @@ const addBook = (title, author) => async (dispatch) => {
   }
 };
 
-// const removeBook = (id) => async (dispatch) => {
-//   const response = await apiRemoveBooks(id);
-//   dispatch({
-//     type: REMOVE_BOOK,
-//     payload: response,
-//   });
-// };
+const removeBook = (id) => async (dispatch) => {
+  const response = await apiRemoveBook(id);
+  if (response.status === 201) {
+    dispatch({
+      type: REMOVE_BOOK,
+      payload: { id },
+    });
+  }
+};
 
 // const nextBookId = (books) => {
 //   const maxId = books.reduce((maxId, book) => Math.max(book.id, maxId), -1);
@@ -48,16 +50,16 @@ const booksReducer = (state = initialState, action) => {
       return [
         ...state,
         {
-          id: action.payload.title.replace(''),
+          id: action.payload.title.replace(/\s+/g, ''),
           title: action.payload.title,
           author: action.payload.author,
         },
       ];
-    // case REMOVE_BOOK:
-    //   return state.filter((book) => (book.id !== action.payload.id));
+    case REMOVE_BOOK:
+      return state.filter((book) => (book.id !== action.payload.id));
     default: return state;
   }
 };
 
 export default booksReducer;
-export { addBook };
+export { addBook, removeBook };
