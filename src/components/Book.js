@@ -16,36 +16,64 @@ const Book = ({
   return (
     <li className="bookCard">
       <div>
-        <p className="bookCategory">
-          {category}
-        </p>
-        <h2 className="bookTitle">
-          {title}
-        </h2>
-        <p className="bookAuthor">
-          {author}
-        </p>
+        <div>
+          <p className="bookCategory">
+            {category}
+          </p>
+          <h2 className="bookTitle">
+            {title}
+          </h2>
+          <p className="bookAuthor">
+            {author}
+          </p>
+        </div>
+        <div>
+          <button
+            type="button"
+            className="bookButton bookAuthor"
+          >
+            Comments
+          </button>
+          <button
+            type="button"
+            onClick={() => dispatch(removeBook(id))}
+            className="bookButton bookAuthor"
+          >
+            Remove
+          </button>
+          <button
+            type="button"
+            className="bookButton bookAuthor"
+          >
+            Edit
+          </button>
+        </div>
       </div>
-      <div>
-        <button
-          type="button"
-          className="bookButton bookAuthor"
-        >
-          Comments
-        </button>
-        <button
-          type="button"
-          onClick={() => dispatch(removeBook(id))}
-          className="bookButton bookAuthor"
-        >
-          Remove
-        </button>
-        <button
-          type="button"
-          className="bookButton bookAuthor"
-        >
-          Edit
-        </button>
+      <div className="bookCompleted">
+        <div className="circle-wrap">
+          <div className="circle">
+            <div className="mask half">
+              <div className="fill" />
+            </div>
+            <div className="inside-circle"> 75% </div>
+            <div className="mask full">
+              <div className="fill" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p className="bookCompletedPercentage">
+            75%
+          </p>
+          <p className="completed">
+            completed
+          </p>
+        </div>
+      </div>
+      <div className="chapterInfo">
+        <p className="currentChapter">CURRENT CHAPTER</p>
+        <p className="chapter">Chapter 17</p>
+        <button className="updatesButton" type="button">UPDATE PROGRESS</button>
       </div>
     </li>
   );
