@@ -16,7 +16,7 @@ const apiAddBooks = async (title, author) => {
       item_id: title.replace(/\s+/g, ''),
       title,
       author,
-      category: 'Non',
+      category: 'Under Constructuion',
     }),
     headers: {
       'Content-Type': 'application/json',

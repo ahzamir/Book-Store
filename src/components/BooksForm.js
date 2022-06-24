@@ -15,28 +15,33 @@ const BooksForm = () => {
   };
   const dispatch = useDispatch();
   return (
-    <form>
-      <input
-        type="text"
-        placeholder="Book title"
-        name="title"
-        value={title}
-        onChange={handleChangeTitle}
-      />
-      <input
-        type="text"
-        placeholder="Book Author"
-        name="author"
-        value={author}
-        onChange={handleChangeAuthor}
-      />
-      <button
-        type="button"
-        onClick={() => { dispatch(addBook(title, author)); }}
-      >
-        Add Book
-      </button>
-    </form>
+    <div>
+      <h2 className="bookFormTitle padding">
+        ADD NEW BOOK
+      </h2>
+      <form className="bookForm padding">
+        <input
+          type="text"
+          placeholder="Book title"
+          name="title"
+          value={title}
+          onChange={handleChangeTitle}
+        />
+        <input
+          type="text"
+          placeholder="Book Author"
+          name="author"
+          value={author}
+          onChange={handleChangeAuthor}
+        />
+        <button
+          type="button"
+          onClick={() => { dispatch(addBook(title, author)); }}
+        >
+          Add Book
+        </button>
+      </form>
+    </div>
   );
 };
 

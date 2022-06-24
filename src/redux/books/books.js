@@ -62,6 +62,7 @@ const booksReducer = (state = initialState, action) => {
           id: action.payload.title.replace(/\s+/g, ''),
           title: action.payload.title,
           author: action.payload.author,
+          category: 'Under Constructuion',
         },
       ];
     case REMOVE_BOOK:

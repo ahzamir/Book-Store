@@ -9,14 +9,15 @@ const Categories = () => {
     dispatch(checkStatus());
   };
   return (
-    <div>
+    <div className="padding">
       <button
         type="button"
+        className="categoriesButton"
         onClick={buttonClickHandler}
       >
         Check status
       </button>
-      <p>
+      <p className="bookCategory categoryStatus">
         {status[0]}
       </p>
     </div>
