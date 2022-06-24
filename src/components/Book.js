@@ -11,7 +11,7 @@ const Book = ({ title, author, id }) => {
     id: PropTypes.string.isRequired,
   };
   return (
-    <li>
+    <li className="bookCard">
       <div>
         <h2>
           Book title:

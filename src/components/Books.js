@@ -7,7 +7,7 @@ const Books = ({ books }) => {
     books: PropTypes.arrayOf(shape({})).isRequired,
   };
   return (
-    <ul>
+    <ul className="padding booksCards">
       {books.map((book) => (
         <Book
           key={book.id}
