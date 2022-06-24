@@ -18,28 +18,29 @@ const Book = ({ title, author, id, category }) => {
           {category}
         </p>
         <h2 className="bookTitle">
-          Book title:
           {title}
         </h2>
         <p className="bookAuthor">
-          Book author:
           {author}
         </p>
       </div>
       <div>
         <button
           type='button'
+          className='bookButton bookAuthor'
         >
           Comments
         </button>
         <button
           type="button"
           onClick={() => dispatch(removeBook(id))}
+          className='bookButton bookAuthor'
         >
           Remove
         </button>
         <button
           type="button"
+          className='bookButton bookAuthor'
         >
           Edit
         </button>

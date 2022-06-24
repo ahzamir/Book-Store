@@ -15,7 +15,7 @@ const BooksForm = () => {
   };
   const dispatch = useDispatch();
   return (
-    <form>
+    <form className="bookForm padding">
       <input
         type="text"
         placeholder="Book title"
