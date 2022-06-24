@@ -5,14 +5,15 @@
 }
 
 body {
-  padding: 7%;
   background-color: #eee;
 }
 
 .navBar {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 4rem;
+  width: 87.5rem;
+  height: 5.938rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color: #fff;
 }
 
 .navBar h1 {
