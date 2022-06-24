@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import BooksForm from '../BooksForm';
 import Books from '../Books';
@@ -9,7 +9,7 @@ const BooksPage = () => {
   const books = useSelector((state) => state.books);
   useEffect(() => {
     dispatch(getBooks());
-  }, [])
+  }, []);
   return (
     <div className="container">
       <div className="inner">

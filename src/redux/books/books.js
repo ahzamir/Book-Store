@@ -8,9 +8,23 @@ const initialState = [];
 
 const getBooks = () => async (dispatch) => {
   const response = await apiGetBooks();
+  const splitKeyValue = (obj) => {
+    const keys = Object.keys(obj);
+    const res = [];
+    for (let i = 0; i < keys.length; i += 1) {
+      res.push({
+        id: keys[i],
+        title: obj[keys[i]][0].title,
+        author: obj[keys[i]][0].author,
+        category: obj[keys[i]][0].category,
+      });
+    }
+    return res;
+  };
+  const books = splitKeyValue(response);
   dispatch({
     type: GET_BOOKS,
-    payload: response,
+    payload: books,
   });
 };
 
@@ -40,7 +54,7 @@ const removeBook = (id) => async (dispatch) => {
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_BOOKS:
-      return [action.payload];
+      return action.payload;
     case ADD_BOOK:
       return [
         ...state,
