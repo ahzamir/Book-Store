@@ -31,7 +31,7 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <IoMdContact className='navBarIcon'/>
+      <IoMdContact className="navBarIcon" />
     </nav>
   );
 };
