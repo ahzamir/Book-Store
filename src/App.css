@@ -78,6 +78,18 @@ body {
   padding: 2rem 1.688rem;
 }
 
+.bookButton {
+  border: none;
+  background-color: #fff;
+  padding-right: 0.938rem;
+  border-right: #e8e8e8 1px solid;
+}
+
+.bookButton:hover {
+  cursor: pointer;
+  color: hsl(206, 100%, 60%);
+}
+
 .bookCard:hover {
   background-color: #e8e8e8;
 }
@@ -112,18 +124,6 @@ body {
   color: #4386bf;
 }
 
-.bookButton {
-  border: none;
-  background-color: #fff;
-  padding-right: 0.938rem;
-  border-right: #e8e8e8 1px solid;
-}
-
-.bookButton:hover {
-  cursor: pointer;
-  color: hsl(206, 100%, 60%)
-}
-
 .bookForm {
   display: flex;
   justify-content: space-between;
@@ -155,7 +155,7 @@ body {
 
 .bookForm button:hover {
   cursor: pointer;
-  background-color: hsl(206, 100%, 30%)
+  background-color: hsl(206, 100%, 30%);
 }
 
 .categoryStatus {
