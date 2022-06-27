@@ -15,7 +15,7 @@
 
 ## Live Demo (if available) 💻
 
-[Book_Store](https://livedemo.com)
+[Book_Store Netlify](https://62ba1732b6caef0aee728265--leafy-gingersnap-7d2f91.netlify.app/)
 
 
 ## Getting Started
